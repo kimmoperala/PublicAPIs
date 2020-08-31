@@ -31,10 +31,11 @@
     function myFunction(arr){
       var out = "";
       var i;
-      out += '<h2>Taulukko työntekijöistä</h2><table><tr><th>Etunimi</th><th>Sukunimi</th></tr>'
+      out += '<h2>Taulukko työntekijöistä</h2><table><tr><th>Etunimi</th><th>Sukunimi</th><th>Kotiosoite</th><th>Puhelin</th></tr>'
       for (i=0; i < arr.length; i++){
         out += '<tr>'
-        out += '<td>' + arr[i].firstName + '</td>' + '<td>' + arr[i].lastName + '</td>';
+        out += '<td>' + arr[i].firstName + '</td>' + '<td>' + arr[i].lastName + '</td>' +
+        '<td>' + arr[i].address + '</td>' + '<td>' + arr[i].phone + '</td>';
         out += '</tr>'
       }
       out += '</table>'
