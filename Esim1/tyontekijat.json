@@ -1,8 +1,8 @@
 {"tyontekijat":
 [
-  {"firstName": "Mauno", "lastName": "Ahonen", "address": "Pispalantie 140, Tampere", "phone": 3580444444},
-  {"firstName": "Matti", "lastName": "Näsä", "address":  "Tesomankuja 4, Tampere", "phone": 35802482448},
-  {"firstName": "Raimo", "lastName": "Vormisto", "address":  "Kotikuja 3, Tampere", "phone": 35824342927},
-  {"firstName": "Timo", "lastName": "Silakka", "address":  "Kalatie 4, Tampere", "phone":  3584595204}
+  {"firstName": "Mauno", "lastName": "Ahonen", "address": "Pispalantie 140, Tampere", "phone": [3580444444, null]},
+  {"firstName": "Matti", "lastName": "Näsä", "address":  "Tesomankuja 4, Tampere", "phone": [35802482448, 358222222]},
+  {"firstName": "Raimo", "lastName": "Vormisto", "address":  "Kotikuja 3, Tampere", "phone": [35824342927,358252525]},
+  {"firstName": "Timo", "lastName": "Silakka", "address":  "Kalatie 4, Tampere", "phone": [3584595204, null]}
 ]
 }
