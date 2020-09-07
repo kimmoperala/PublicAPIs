@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/PublicAPIs/static/js/main.5aac09f2.chunk.js",
-    "main.js.map": "/PublicAPIs/static/js/main.5aac09f2.chunk.js.map",
+    "main.js": "/PublicAPIs/static/js/main.b6c10c1c.chunk.js",
+    "main.js.map": "/PublicAPIs/static/js/main.b6c10c1c.chunk.js.map",
     "runtime-main.js": "/PublicAPIs/static/js/runtime-main.9f956c24.js",
     "runtime-main.js.map": "/PublicAPIs/static/js/runtime-main.9f956c24.js.map",
     "static/js/2.d275c0f4.chunk.js": "/PublicAPIs/static/js/2.d275c0f4.chunk.js",
     "static/js/2.d275c0f4.chunk.js.map": "/PublicAPIs/static/js/2.d275c0f4.chunk.js.map",
     "index.html": "/PublicAPIs/index.html",
-    "precache-manifest.125d5267ba9139ecd6d89ee9e6d08d2d.js": "/PublicAPIs/precache-manifest.125d5267ba9139ecd6d89ee9e6d08d2d.js",
+    "precache-manifest.907023f88dee3995fb927e54af4491e3.js": "/PublicAPIs/precache-manifest.907023f88dee3995fb927e54af4491e3.js",
     "service-worker.js": "/PublicAPIs/service-worker.js",
     "static/js/2.d275c0f4.chunk.js.LICENSE.txt": "/PublicAPIs/static/js/2.d275c0f4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9f956c24.js",
     "static/js/2.d275c0f4.chunk.js",
-    "static/js/main.5aac09f2.chunk.js"
+    "static/js/main.b6c10c1c.chunk.js"
   ]
 }
