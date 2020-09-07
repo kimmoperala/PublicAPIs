@@ -11,29 +11,25 @@ function GetBikeStations() {
       stations = body.data.bikeRentalStations;
       console.log("koko:" + stations.length);
 
-      addDOMElements(stations);
+      var out = "";
+
+      for (var i = 0; i < stations.length; i++) {
+        out += '<tr>'
+        out += '<td>' + stations[i].name + '</td>' +
+            '<td>' + stations[i].bikesAvailable + '</td>' +
+            '<td>' + stations[i].spacesAvailable + '</td>'
+        out += '</tr>'
+      }
+      out = Parser(out);
+
+      ReactDOM.render(
+          out,
+          document.getElementById('asemat')
+      )
     } else {
       console.log("Ei yhteyttä!");
     }
   });
-}
-
-function addDOMElements(stations) {
-  var out = "";
-
-  for (var i = 0; i < stations.length; i++) {
-    out += '<tr>'
-    out += '<td>' + stations[i].name + '</td>' +
-        '<td>' + stations[i].bikesAvailable + '</td>' +
-        '<td>' + stations[i].spacesAvailable + '</td>'
-    out += '</tr>'
-  }
-  out = Parser(out);
-
-  ReactDOM.render(
-      out,
-      document.getElementById('asemat')
-  )
 }
 
 const req = {
