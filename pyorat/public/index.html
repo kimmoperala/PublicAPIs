@@ -24,16 +24,19 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+
     <style>
-      table, th, td {
-        border: 1px solid blue;
-        border-collapse: collapse;
+      html, body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
       }
-      th{
-        font-size: large;
-      }
-      tr {
-        text-align: center;
+      #map {
+        /* configure the size of the map */
+        width: 100%;
+        height: 100%;
       }
     </style>
     <title>React App</title>
@@ -51,5 +54,22 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+<!--    <div id="map"></div>-->
+   <!-- <script>
+      // initialize Leaflet
+      var map = L.map('map').setView({lon: 24.9410248, lat: 60.21}, 11);
+
+      // add the OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+      }).addTo(map);
+
+      // show the scale bar on the lower left corner
+      L.control.scale().addTo(map);
+
+      // show a marker on the map
+      L.marker({lon: 24.8, lat: 60.21}).bindPopup('Pysäkki 1').addTo(map);
+    </script>-->
   </body>
 </html>
