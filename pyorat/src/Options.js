@@ -1,37 +1,52 @@
 import React from 'react'
 import {MapView} from './MapView';
 
-const originLat=60.167;
+// Default map view
+const originLat=60.168;
 const originLon=24.942;
 const originZoom=14;
 
 export class Options extends React.Component {
 
+  //items = all the retrieved stations; station = station which is selected
   constructor(props){
     super(props);
     this.state = {
       items: [],
       isLoaded: false,
-      value: '',
-      lat: originLat,
-      lon: originLon,
+      station: {
+        lat: originLat,
+        lon: originLon
+      },
       zoom: originZoom
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // Event handler for selecting the station from the list. Sets the location for bike stop info (stopInfo)
+  // Event handler for selecting the station from the list
   handleChange(event) {
     var obj = JSON.parse(event.target.value);
     this.setState({
-      value: obj,
-      lat: obj.lat,
-      lon: obj.lon
+      station: obj
     })
   }
 
+ /* getWeatherData(){
+    // Receive weather data from Openweather API
+    fetch('http://api.openweathermap.org/data/2.5/weather?q=Helsinki&appid=114332134ea7ed53cb7a0e88a863eb5d', {
+    })
+        .then(response => response.json())
+        .then(json => {
+          console.log("json ", json)
+        })
+        .catch(function(err) {
+          console.log("Error happened: ", err)
+        })
+  }*/
+
   componentDidMount() {
+
     // Receive data from Digitransit API
     fetch('https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql', {
       method: 'POST',
@@ -61,22 +76,19 @@ export class Options extends React.Component {
   }
 
   render() {
-    const {isLoaded, items, value} = this.state;
+    const {isLoaded, items, station} = this.state;
     if (!isLoaded){
       return <option>Lataa...</option>
     }
 
-    // Bike stop info passed to Mapview
-    const stopInfo = [this.state.lat, this.state.lon, this.state.zoom, this.state.value.name, this.state.value.bikesAvailable];
-
     let teksti;
 
     // Empty field for starting view
-    if (this.state.lat===originLat){
+    if (this.state.station.lat===originLat){
       teksti = <p><br/></p>
     } else {
-      teksti = <p>{value.name}, vapaita pyöriä: {value.bikesAvailable},
-        vapaita pyöräpaikkoja: {value.spacesAvailable}</p>
+      teksti = <p>{station.name}, vapaita pyöriä: {station.bikesAvailable},
+        vapaita pyöräpaikkoja: {station.spacesAvailable}</p>
     }
     return (
         <>
@@ -89,7 +101,7 @@ export class Options extends React.Component {
           ))}
           </select>
           {teksti}
-          <MapView info={stopInfo}/>
+          <MapView {...this.state}/>
         </>
     );
   }
