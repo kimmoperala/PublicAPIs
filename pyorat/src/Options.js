@@ -21,7 +21,7 @@ export class Options extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // Event handler for selecting the station from the list. Sets the
+  // Event handler for selecting the station from the list. Sets the location for bike stop info (stopInfo)
   handleChange(event) {
     var obj = JSON.parse(event.target.value);
     this.setState({
@@ -81,9 +81,9 @@ export class Options extends React.Component {
     return (
         <>
           <select onChange={this.handleChange}>
-            <option selected disabled>Valitse asema</option>
+            <option hidden={true}>Valitse asema</option>
           {items.map(item => (
-              <option key={item.name} value={JSON.stringify(item)}>
+              <option key={item.stationId} value={JSON.stringify(item)}>
                 {item.name}
               </option>
           ))}
