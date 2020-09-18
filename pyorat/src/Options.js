@@ -1,5 +1,7 @@
 import React from 'react'
-import {MapView} from './MapView';
+import {MapView} from './MapView'
+import {Weather} from './Weather'
+
 
 // Default map view
 const originLat=60.168;
@@ -32,18 +34,7 @@ export class Options extends React.Component {
     })
   }
 
- /* getWeatherData(){
-    // Receive weather data from Openweather API
-    fetch('http://api.openweathermap.org/data/2.5/weather?q=Helsinki&appid=114332134ea7ed53cb7a0e88a863eb5d', {
-    })
-        .then(response => response.json())
-        .then(json => {
-          console.log("json ", json)
-        })
-        .catch(function(err) {
-          console.log("Error happened: ", err)
-        })
-  }*/
+
 
   componentDidMount() {
 
@@ -84,7 +75,7 @@ export class Options extends React.Component {
     let teksti;
 
     // Empty field for starting view
-    if (this.state.station.lat===originLat){
+    if (station.lat===originLat){
       teksti = <p><br/></p>
     } else {
       teksti = <p>{station.name}, vapaita pyöriä: {station.bikesAvailable},
@@ -102,6 +93,7 @@ export class Options extends React.Component {
           </select>
           {teksti}
           <MapView {...this.state}/>
+          <Weather />
         </>
     );
   }
