@@ -77,7 +77,7 @@ export class Weather extends React.Component {
       return (
           <div className="weather-box">
             <h3>Sää {weather.name}</h3>
-            <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
+            <img alt="säätilan kuva" src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
             <h2 className="temperature-number">{temperature}°C</h2>
             {weather.weather[0].description}
             <p>{date}</p>
