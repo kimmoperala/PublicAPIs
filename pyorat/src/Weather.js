@@ -79,8 +79,8 @@ export class Weather extends React.Component {
             <h3>Sää {weather.name}</h3>
             <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
             <h2 className="temperature-number">{temperature}°C</h2>
-            <p>{date}</p>
             {weather.weather[0].description}
+            <p>{date}</p>
             <table className="weather-table">
               <tbody>
               <tr>
@@ -88,6 +88,9 @@ export class Weather extends React.Component {
               </tr>
               <tr>
                 <th>tuntuu kuin</th><td>{feelsLike}°C</td>
+              </tr>
+              <tr>
+                <th>Ilmankosteus</th><td> {weather.main.humidity} %</td>
               </tr>
               <tr>
                 <th>Pilvisyys</th><td> {weather.clouds.all} %</td>

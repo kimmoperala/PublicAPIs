@@ -7,7 +7,7 @@ import './index.css'
 const App = () => {
   return (
       <>
-        <h1>Polkupyöräasemat</h1>
+        <h1>PK-seudun polkupyöräasemat</h1>
           <Options />
         </>
   )
