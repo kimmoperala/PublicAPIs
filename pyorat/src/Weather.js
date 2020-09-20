@@ -15,7 +15,7 @@ export class Weather extends React.Component {
     var dateNow = new Date();
     dateNow = dateNow.toLocaleString();
     //Receive weather data from Openweather API
-    fetch('http://api.openweathermap.org/data/2.5/weather?q=' +
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' +
         'Helsinki&units=metric&appid=114332134ea7ed53cb7a0e88a863eb5d' +
         '&lang=fi', {})
         .then(response => response.json())
