@@ -12,7 +12,7 @@ export class MapView extends React.Component {
     super(props);
     this.state = {
       isMapInit: false,
-      destText: "Kirjoita määränpääsi",
+      destText: "",
       destination: {
         destLat:"60.168",
         destLon:"24.942"
@@ -66,7 +66,7 @@ export class MapView extends React.Component {
         <>
         <p>Minne haluat mennä asemalta? Kirjoita nimi tai osoite</p>
         <form className="destination-form" onSubmit={this.handleSubmit} >
-          <input type="text" value={this.state.destText} className="input-box" onChange={this.handleChange}/>
+          <input type="text" placeholder="Esim. Mannerheimintie 1, Helsinki" className="input-box" onChange={this.handleChange}/>
           <button type="submit">Etsi määränpää</button>
         </form>
           </>

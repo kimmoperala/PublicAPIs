@@ -54,7 +54,6 @@ class Routing extends React.Component {
   }
 
   createLeafletElement() {
-    console.log("Eka!")
     this.leafletElement = L.Routing.control({
     }).addTo(this.state.map.leafletElement);
     return this.leafletElement.getPlan()
