@@ -10,7 +10,6 @@ export class Weather extends React.Component {
     }
   }
 
-
   componentDidMount() {
     var dateNow = new Date();
     dateNow = dateNow.toLocaleString();
@@ -90,10 +89,10 @@ export class Weather extends React.Component {
                 <th>tuntuu kuin</th><td>{feelsLike}°C</td>
               </tr>
               <tr>
-                <th>Ilmankosteus</th><td> {weather.main.humidity} %</td>
+                <th>Ilmankosteus</th><td>{weather.main.humidity} %</td>
               </tr>
               <tr>
-                <th>Pilvisyys</th><td> {weather.clouds.all} %</td>
+                <th>Pilvisyys</th><td>{weather.clouds.all} %</td>
               </tr>
               <tr>
                 <th>Auringonnousu</th><td>{sunrise}</td>

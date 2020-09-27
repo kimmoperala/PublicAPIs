@@ -2,7 +2,6 @@ import React from 'react'
 import {MapView} from './MapView'
 import {Weather} from './Weather'
 
-
 // Default map view
 const originLat=60.168;
 const originLon=24.942;

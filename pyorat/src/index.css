@@ -41,6 +41,23 @@ h1, h2, h3 {
     padding: 10%;
 }
 
+.destination-form {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.input-box {
+  font-size: large;
+  width: 70%;
+  float: left;
+}
+button {
+  font-size: 20px;
+  float: left;
+  font-family: Courier;
+  background-color: burlywood;
+}
+
 img {
   display: block;
   margin-left: auto;
@@ -50,7 +67,7 @@ img {
 }
 
 .leaflet-container {
-  height: 400px;
+  height: 800px;
   width: 70%;
   margin: 0 auto;
   float: left;
