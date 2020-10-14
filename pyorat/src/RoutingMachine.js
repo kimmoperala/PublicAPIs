@@ -23,6 +23,7 @@ class Routing extends React.Component {
   }
 
   componentDidUpdate(){
+    console.log("täsä",this.props.destination)
     this.setStartpoint()
     this.setEndpoint()
   }
@@ -33,11 +34,13 @@ class Routing extends React.Component {
     const destLon = destination.destLon;
     console.log("Destlatti ", destLat)
     console.log("Destlonni ", destLon)
-    this.leafletElement.spliceWaypoints(1,1, L.latLng(destLat, destLon));
-    console.log("getWaypoints ",this.leafletElement.getWaypoints())
-    console.log("getPlan ", this.leafletElement.getPlan())
+    if (destLon !== "") {
+      this.leafletElement.spliceWaypoints(1, 1, L.latLng(destLat, destLon));
+      console.log("getWaypoints ", this.leafletElement.getWaypoints())
+      console.log("getPlan ", this.leafletElement.getPlan())
 
-    return this.leafletElement.getPlan()
+      return this.leafletElement.getPlan()
+    }
   }
 
   setStartpoint(){
@@ -54,7 +57,14 @@ class Routing extends React.Component {
   }
 
   createLeafletElement() {
+    const {position} = this.props
+    const lat = position.lat;
+    const lon = position.lon;
+
     this.leafletElement = L.Routing.control({
+      waypoints: [
+        L.latLng(lat, lon)
+      ]
     }).addTo(this.state.map.leafletElement);
     return this.leafletElement.getPlan()
   }

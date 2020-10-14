@@ -14,8 +14,8 @@ export class MapView extends React.Component {
       isMapInit: false,
       destText: "",
       destination: {
-        destLat:"60.168",
-        destLon:"24.942"
+        destLat:"",
+        destLon:""
       },
     }
 
